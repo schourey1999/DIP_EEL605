@@ -12,6 +12,15 @@ import torch
 class ImageDataset(Dataset):
     def __init__(self, root, unaligned=False, mode='train'):
         self.unaligned = unaligned
+        self.root = root
+        #self.unaligned = unaligned
+
+        # Get the list of image files in the directory
+        self.image_files = [os.path.join(self.root, f) for f in os.listdir(self.root) if os.path.isfile(os.path.join(self.root, f))]
+
+        # Shuffle the image files randomly
+        random.shuffle(self.image_files)
+
 
         self.files_A = sorted(glob.glob(os.path.join(root, '%s/train_A' % mode) + '/*.*'))
         self.files_B = sorted(glob.glob(os.path.join(root, '%s/train_D' % mode) + '/*.*'))
