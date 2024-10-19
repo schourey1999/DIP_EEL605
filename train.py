@@ -32,7 +32,7 @@ opt = parser.parse_args()
 
 
 # ISTD
-opt.dataroot = '/home/liuzhihao/dataset/PAISTD8'
+opt.dataroot = '/PAISTD8'
 
 if not os.path.exists('ckpt'):
     os.mkdir('ckpt')
