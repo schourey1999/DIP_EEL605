@@ -80,6 +80,7 @@ lr_scheduler_D_B = torch.optim.lr_scheduler.LambdaLR(optimizer_D_B,lr_lambda=Lam
 
 # Inputs & targets memory allocation
 Tensor = torch.cuda.FloatTensor
+opt.cuda = False
 input_A = Tensor(opt.batchSize, 3, opt.size, opt.size)
 input_B = Tensor(opt.batchSize, 3, opt.size, opt.size)
 input_C = Tensor(opt.batchSize, 1, opt.size, opt.size)
