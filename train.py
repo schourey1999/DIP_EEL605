@@ -81,14 +81,14 @@ lr_scheduler_D_B = torch.optim.lr_scheduler.LambdaLR(optimizer_D_B,lr_lambda=Lam
 # Inputs & targets memory allocation
 Tensor = torch.cuda.FloatTensor
 opt.cuda = False
-input_A = Tensor(opt.batchSize, 3, opt.size, opt.size)
-input_B = Tensor(opt.batchSize, 3, opt.size, opt.size)
-input_C = Tensor(opt.batchSize, 1, opt.size, opt.size)
-input_D = Tensor(opt.batchSize, 3, opt.size, opt.size)
-input_E = Tensor(opt.batchSize, 3, opt.size, opt.size)
-input_F = Tensor(opt.batchSize, 1, opt.size, opt.size)
-target_real = Variable(Tensor(opt.batchSize).fill_(1.0), requires_grad=False)
-target_fake = Variable(Tensor(opt.batchSize).fill_(0.0), requires_grad=False)
+input_A = torch.FloatTensor(opt.batchSize, 3, opt.size, opt.size)
+input_B = torch.FloatTensor(opt.batchSize, 3, opt.size, opt.size)
+input_C = torch.FloatTensor(opt.batchSize, 1, opt.size, opt.size)
+input_D = torch.FloatTensor(opt.batchSize, 3, opt.size, opt.size)
+input_E = torch.FloatTensor(opt.batchSize, 3, opt.size, opt.size)
+input_F = torch.FloatTensor(opt.batchSize, 1, opt.size, opt.size)
+target_real = Variable(torch.FloatTensor(opt.batchSize).fill_(1.0), requires_grad=False)
+target_fake = Variable(torch.FloatTensor(opt.batchSize).fill_(0.0), requires_grad=False)
 
 fake_B_buffer = ReplayBuffer()
 
