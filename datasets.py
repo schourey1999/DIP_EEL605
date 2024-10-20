@@ -11,12 +11,12 @@ class ImageDataset(Dataset):
         self.unaligned = unaligned
 
         # List all image files in each dataset folder
-        self.files_A = sorted(os.listdir(os.path.join(root, 'A')))  # Non-shadow region images
-        self.files_B = sorted(os.listdir(os.path.join(root, 'B')))  # Shadow region images
-        self.files_C = sorted(os.listdir(os.path.join(root, 'C')))  # Mask images
-        self.files_D = sorted(os.listdir(os.path.join(root, 'D')))  # Non-shadow
-        self.files_E = sorted(os.listdir(os.path.join(root, 'E')))  # Real shadow region + non-shadow
-        self.files_F = sorted(os.listdir(os.path.join(root, 'F')))  # Dilated mask
+        self.files_A = sorted(os.listdir(os.path.join(root, 'train_A')))  # Non-shadow region images
+        self.files_B = sorted(os.listdir(os.path.join(root, 'train_B')))  # Shadow region images
+        self.files_C = sorted(os.listdir(os.path.join(root, 'train_C')))  # Mask images
+        self.files_D = sorted(os.listdir(os.path.join(root, 'train_D')))  # Non-shadow
+        self.files_E = sorted(os.listdir(os.path.join(root, 'train_E')))  # Real shadow region + non-shadow
+        self.files_F = sorted(os.listdir(os.path.join(root, 'train_F')))  # Dilated mask
 
         # Define the transform pipeline for the images
         self.transform = transforms.Compose([
