@@ -30,7 +30,7 @@ parser.add_argument('--iter_loss', type=int, default=100, help='average loss for
 opt = parser.parse_args()
 
 # Dataset path (update as per actual path in your environment)
-opt.dataroot = '/PAISTD8'
+opt.dataroot = '/DIP_EEL605/PAISTD8'
 
 if not os.path.exists('ckpt'):
     os.mkdir('ckpt')
